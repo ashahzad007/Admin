@@ -271,3 +271,4 @@ C:\Users\amir.shahzad\source\repos\Admin\AdminWeb\obj\Debug\net6.0\refint\AdminW
 C:\Users\amir.shahzad\source\repos\Admin\AdminWeb\obj\Debug\net6.0\AdminWeb.pdb
 C:\Users\amir.shahzad\source\repos\Admin\AdminWeb\obj\Debug\net6.0\AdminWeb.genruntimeconfig.cache
 C:\Users\amir.shahzad\source\repos\Admin\AdminWeb\obj\Debug\net6.0\ref\AdminWeb.dll
+C:\Users\amir.shahzad\source\repos\Admin\AdminWeb\bin\Debug\net6.0\System.Reflection.MetadataLoadContext.dll

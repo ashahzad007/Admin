@@ -1,0 +1,130 @@
+﻿@model IEnumerable<AdminWeb.Models.Person>
+
+@{
+    ViewData["Title"] = "Index";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+     Layout = "_Layout";
+}
+
+<h1>Index</h1>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <!-- Favicon icon -->
+        <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
+        <title>Elegant Admin Template - The Ultimate Multipurpose admin template</title>
+	<link rel="canonical" href="https://www.wrappixel.com/templates/elegant-admin/" />
+        <!-- This page CSS -->
+        <link href="~/assets/node_modules/morrisjs/morris.css" rel="stylesheet">
+        <!-- Custom CSS -->
+        <link href="~/dist/css/style.min.css" rel="stylesheet">
+        <!-- Dashboard 1 Page CSS -->
+        <link href="~/dist/css/pages/dashboard5.css" rel="stylesheet">
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HomeTown)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedByUser)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ModifiedByUser)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ModifiedDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HomeTown)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedByUser)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModifiedByUser)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModifiedDate)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+@*============================PATH WWW ROOT SHOULD BE MATCHED OTHERWISE ERROR ENCOUTER HO GA=============================*@
+
+<script src="../assets/node_modules/jquery/jquery-3.2.1.min.js"></script>
+<!-- Bootstrap popper Core JavaScript -->
+<script src="~/assets/node_modules/popper/popper.min.js"></script>
+<script src="~/assets/node_modules/bootstrap/js/bootstrap.min.js"></script>
+<!-- slimscrollbar scrollbar JavaScript -->
+<script src="~/dist/js/perfect-scrollbar.jquery.min.js"></script>
+<!--Wave Effects -->
+<script src="~/dist/js/waves.js"></script>
+<!--Menu sidebar -->
+<script src="~/dist/js/sidebarmenu.js"></script>
+<!--Custom JavaScript -->
+<script src="~/dist/js/custom.min.js"></script>
+<!-- ============================================================== -->
+<!-- This page plugins -->
+<!-- ============================================================== -->
+<!-- This is data table -->
+<script src="../assets/node_modules/datatables.net/js/jquery.dataTables.min.js"></script>
+<!--morris JavaScript -->
+<script src="~/assets/node_modules/raphael/raphael.min.js"></script>
+<script src="~/assets/node_modules/morrisjs/morris.min.js"></script>
+<script src="~/assets/node_modules/jquery-sparkline/jquery.sparkline.min.js"></script>
+<!-- Chart JS -->
+<script src="dist/js/dashboard5.js"></script>
+<script type="text/javascript">
+$(function() {
+$('#cc-table').DataTable({
+"displayLength": 10
+});
+});
+</script>

@@ -153,6 +153,7 @@ namespace AdminWeb.Areas.Identity.Pages.Account
                 // feed custom data into application user class or insert into users table. 
                 user.Name = Input.Name;
                 user.Address = Input.Address;
+                user.EmployeeCode = Input.EmployeeCode;
                 user.City = Input.City;
                 user.State = Input.State;
                 user.PostalCode = Input.PostalCode;

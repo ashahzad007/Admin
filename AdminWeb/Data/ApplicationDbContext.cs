@@ -1,4 +1,5 @@
-﻿using AdminWeb.Models.IdentityExtend;
+﻿using AdminWeb.Models;
+using AdminWeb.Models.IdentityExtend;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -12,5 +13,6 @@ namespace AdminWeb.Data
         }
         //Extend Identity User CLass.
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
+        public virtual DbSet<Person> Person { get; set; }
     }
 }
