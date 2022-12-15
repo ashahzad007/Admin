@@ -82,12 +82,16 @@
         <!-- ============================================================== -->
         <!-- Preloader - style you can find in spinners.css -->
         <!-- ============================================================== -->
-        <div class="preloader">
+   @* =========================LOADER LABEL===========================================*@
+      
+    <div class="preloader">
             <div class="loader">
                 <div class="loader__figure"></div>
-                <p class="loader__label">Elegant admin</p>
+                <p class="loader__label">Admin Panel</p>
             </div>
         </div>
+
+   @* =========================LOADER LABEL===========================================*@
         <!-- ============================================================== -->
         <!-- Main wrapper - style you can find in pages.scss -->
         <!-- ============================================================== -->
@@ -632,6 +636,7 @@
 @*==========================================@RENDERBODY()=============================================================*@
 
 @RenderBody()
+@RenderSection("scripts", false)
 
 @*==========================================@RENDERBODY()=============================================================*@
 
@@ -1847,7 +1852,7 @@
     <li><a href="javascript:void(0)" data-skin="skin-purple-dark" class="purple-dark-theme">11</a></li>
     <li><a href="javascript:void(0)" data-skin="skin-megna-dark" class="megna-dark-theme ">12</a></li>
 </ul>
-<ul class="m-t-20 chatonline">
+@*<ul class="m-t-20 chatonline">
     <li><b>Chat option</b></li>
     <li>
         <a href="javascript:void(0)"><img src="../assets/images/users/1.jpg" alt="user-img" class="img-circle"> <span>Varun Dhavan <small class="text-success">online</small></span></a>
@@ -1873,7 +1878,7 @@
     <li>
         <a href="javascript:void(0)"><img src="../assets/images/users/8.jpg" alt="user-img" class="img-circle"> <span>Pwandeep rajan <small class="text-success">online</small></span></a>
     </li>
-</ul>
+</ul>*@
 </div>
 </div>
 </div>

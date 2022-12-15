@@ -4,7 +4,9 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+	<Nullable>disable</Nullable>
     <UserSecretsId>aspnet-AdminWeb-D5CB3C3D-A549-42BD-8EA8-543907AB6925</UserSecretsId>
+	  
   </PropertyGroup>
 
   <ItemGroup>
@@ -2526,6 +2528,12 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.10" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\ViewModels\" />
+    <Folder Include="Implementation\" />
+    <Folder Include="Repositories\" />
   </ItemGroup>
 
 </Project>

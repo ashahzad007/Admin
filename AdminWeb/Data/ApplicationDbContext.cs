@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using AdminWeb.Models.IdentityExtend;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace AdminWeb.Data
@@ -9,5 +10,7 @@ namespace AdminWeb.Data
             : base(options)
         {
         }
+        //Extend Identity User CLass.
+        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
     }
 }
