@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "e4FtAccZ3mmbavwiGfGrRc1yUVJOzKArKRgdR49rpTs=",
+  "Hash": "uaiSbsC2LnQ01K9sENAODLsAAuusks827L5npN45aPc=",
   "Source": "AdminWeb",
   "BasePath": "_content/AdminWeb",
   "Mode": "Default",
@@ -27453,6 +27453,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\amir.shahzad\\source\\repos\\Admin\\AdminWeb\\wwwroot\\style.min.css",
+      "SourceId": "AdminWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\amir.shahzad\\source\\repos\\Admin\\AdminWeb\\wwwroot\\",
+      "BasePath": "_content/AdminWeb",
+      "RelativePath": "style.min.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\style.min.css"
     }
   ]
 }

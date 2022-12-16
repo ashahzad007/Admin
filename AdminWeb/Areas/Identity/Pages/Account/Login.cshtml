@@ -3,13 +3,11 @@
 
 @{
     ViewData["Title"] = "Log in";
-    // Layout = "~/Views/Shared/_Layout.cshtml";
-     //Layout = "_Layout";
-     
-}
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "_Layout";
 
-<h1>@ViewData["Title"]</h1>
-    <head>
+}
+ <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <!-- Tell the browser to be responsive to screen width -->
@@ -17,7 +15,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
         <!-- Favicon icon -->
-        @*<link rel="icon" type="image/png" sizes="16x16" href=".../wwwroot/assets/images/favicon.png">*@
+        <link rel="icon" type="image/png" sizes="16x16" href="~/assets/images/favicon.png">
         <title>Elegant Admin Template - The Ultimate Multipurpose admin template</title>
 	<link rel="canonical" href="https://www.wrappixel.com/templates/elegant-admin/" />
         <!-- This page CSS -->
@@ -33,6 +31,7 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
     </head>
+   @* <img src="~/assets/images/favicon.png" sizes="16x16" style="width:50px;height:50px;">*@
 <div class="row">
     <div class="col-md-4">
         <section>
@@ -107,11 +106,9 @@
     </div>
 </div>
 
-@section Scripts {
+@*@section Scripts {
     <partial name="_ValidationScriptsPartial" />
-}
-
-@*============================PATH WWW ROOT SHOULD BE MATCHED OTHERWISE ERROR ENCOUTER HO GA=============================*@
+}*@
 
 <script src="~/assets/node_modules/jquery/jquery-3.2.1.min.js"></script>
 <!-- Bootstrap popper Core JavaScript -->

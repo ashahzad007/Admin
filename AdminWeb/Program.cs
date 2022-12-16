@@ -1,4 +1,7 @@
 using AdminWeb.Data;
+using AdminWeb.Implementation;
+using AdminWeb.Models;
+using AdminWeb.Repositories.Contract;
 using AdminWeb.Utility;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
@@ -12,6 +15,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddRazorPages();
+builder.Services.AddScoped<IGenericRepository<Person>, PersonRepository>();
 //builder.Services.AddTransient<ICurrentUserService, CurrentUserService>();
 
 
@@ -57,7 +61,7 @@ app.UseAuthorization();
 app.MapRazorPages();
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Home}/{action=GetPersonList}/{id?}");
 
 
 app.Run();

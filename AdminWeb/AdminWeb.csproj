@@ -2532,8 +2532,6 @@
 
   <ItemGroup>
     <Folder Include="Models\ViewModels\" />
-    <Folder Include="Implementation\" />
-    <Folder Include="Repositories\" />
   </ItemGroup>
 
 </Project>
