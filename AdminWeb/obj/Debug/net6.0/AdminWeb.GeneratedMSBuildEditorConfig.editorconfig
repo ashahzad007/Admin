@@ -175,6 +175,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/amir.shahzad/source/repos/Admin/AdminWeb/Views/Home/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/amir.shahzad/source/repos/Admin/AdminWeb/Views/Home/GetPersonList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHZXRQZXJzb25MaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -185,6 +189,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/amir.shahzad/source/repos/Admin/AdminWeb/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/amir.shahzad/source/repos/Admin/AdminWeb/Views/Home/SavePerson.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTYXZlUGVyc29uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/amir.shahzad/source/repos/Admin/AdminWeb/Views/Person/Create.cshtml]

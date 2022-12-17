@@ -32,11 +32,33 @@ namespace AdminWeb.Controllers
             return View(_personList);
         }
 
-        
+        [HttpGet]
+        public IActionResult SavePerson()
+        {
+            
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> SavePerson(Person model)
+        {
+            bool _result = await _personRepository.Save(model);
+
+            return View(model);
+        }
+
+
+       
 
         public IActionResult Privacy()
         {
             return View();
+        }
+
+        public IActionResult Edit(int id)
+        {
+            var row = _personRepository.GetList().Result.Find(x => x.Id == id);
+            return View(row);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
