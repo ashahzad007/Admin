@@ -5,7 +5,7 @@ using System.Data;
 
 namespace AdminWeb.Implementation
 {
-    public class PersonRepository :IGenericRepository<Person>
+    public class PersonRepository : IGenericRepository<Person>
     {
         private readonly IConfiguration _configuration;
 
@@ -77,13 +77,6 @@ namespace AdminWeb.Implementation
             return _List;
         }
 
-        public Task<bool> Delete(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-
-
 
         public async Task<bool> Save(Person entity)
         {
@@ -131,6 +124,24 @@ namespace AdminWeb.Implementation
                     return true;
                 else
                     return false;
+            }
+        }
+
+        public async Task<bool> Delete(int? id)
+        {
+            using (var connection = new SqlConnection(_configuration.GetConnectionString("DefaultConnection")))
+            {
+                connection.Open();
+                SqlCommand cmd = new SqlCommand("spDeletePerson", connection);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Id", id);
+                int affectedRows = await cmd.ExecuteNonQueryAsync();
+
+                if (affectedRows > 0)
+                    return true;
+                else
+                    return false;
+
             }
         }
     }

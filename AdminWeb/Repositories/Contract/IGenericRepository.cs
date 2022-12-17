@@ -6,6 +6,6 @@
         Task<List<T>> GetSingle(int? id);
         Task<bool> Save(T entity);
         Task<bool> Edit(T entity);
-        Task<bool> Delete(int id);
+        Task<bool> Delete(int? id);
     }
 }
