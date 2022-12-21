@@ -3,6 +3,7 @@ using AdminWeb.Repositories.Contract;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using System;
 
 namespace AdminWeb.Controllers
 {
@@ -29,6 +30,19 @@ namespace AdminWeb.Controllers
         public async Task<IActionResult> GetPersonList()
         {
             List<Person> _personList = await _personRepository.GetList();
+            return View(_personList);
+        }
+
+        [HttpPost]
+
+        //DATA FROM ADO.NET 
+        public async Task<IActionResult> GetPersonList(string SerachTxt)
+        {
+            List<Person> _personList = await _personRepository.GetList();
+            if (SerachTxt !=null)
+            {
+                _personList = _personRepository.GetList().Result.Where(x => x.Name.Contains(SerachTxt)).ToList();
+            }
             return View(_personList);
         }
 
