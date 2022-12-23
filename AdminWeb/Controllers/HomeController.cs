@@ -28,8 +28,11 @@ namespace AdminWeb.Controllers
             List<Location> cl = new List<Location>();
             cl =  _locationRepository.GetList().Result.ToList();
             cl.Insert(0, new Location { Id = 0, LocationName = "--Select Country Name--" });
+            Location location = new Location();
+            location.Listoflocations = cl;
             ViewBag.message = cl;
            
+
             return View();
         }
 
