@@ -14,5 +14,6 @@ namespace AdminWeb.Data
         //Extend Identity User CLass.
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
         public virtual DbSet<Person> Person { get; set; }
+        public virtual DbSet<Location> Location { get; set; }
     }
 }

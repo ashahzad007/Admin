@@ -1,10 +1,10 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@model AdminWeb.Models.Location
 
 
-<div class="text-center">
-    <h1 class="display-4">Welcome Admin Page </h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
-
+@{  
+    ViewData["Title"] = "Index";  
+}  
+  
+<h1>Binding data into Dropdown list</h1>  
+<hr />  
+<select asp-for="Id" asp-items="@(new SelectList(ViewBag.message,"Id","LocationName"))"></select>  

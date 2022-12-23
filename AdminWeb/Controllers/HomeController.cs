@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using System;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace AdminWeb.Controllers
 {
@@ -13,17 +14,25 @@ namespace AdminWeb.Controllers
         private readonly ILogger<HomeController> _logger;
       
         private readonly IGenericRepository<Person> _personRepository;
+        private readonly IGenericRepository<Location> _locationRepository;
 
-        public HomeController(ILogger<HomeController> logger, IGenericRepository<Person> personRepository)
+        public HomeController(ILogger<HomeController> logger, IGenericRepository<Person> personRepository, IGenericRepository<Location> locationRepository)
         {
             _logger = logger;
             _personRepository = personRepository;
+            _locationRepository = locationRepository;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
+            List<Location> cl = new List<Location>();
+            cl =  _locationRepository.GetList().Result.ToList();
+            cl.Insert(0, new Location { Id = 0, LocationName = "--Select Country Name--" });
+            ViewBag.message = cl;
+           
             return View();
         }
+
         [HttpGet]
 
         //DATA FROM ADO.NET 
