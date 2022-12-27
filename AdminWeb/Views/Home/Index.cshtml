@@ -1,9 +1,40 @@
 ﻿@model AdminWeb.Models.Location
 
 
-@{  
-    ViewData["Title"] = "Index";  
+@{
+    ViewData["Title"] = "Index";
+   // var x = Model.Id;
 }  
+
+   
+	<h5>Select Location</h5>
+	<div class="card mb-0 bg-light mt-3">
+	    <div class="card-body">
+	     <div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" asp-controller="Person">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="" asp-for="Id" />
+            <div class="form-group">
+               <select asp-for="Id" asp-items="@(new SelectList(ViewBag.message,"Id","LocationName"))"></select>  
+            </div>
+        
+            <div class="form-group">
+                <input type="submit" value="GO" class="btn btn-primary" />
+                
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+</div>
+
+@*<div>
+	    </div>
+	</div>
+	</div>
+
+
 @*  
 <h1>Binding data into Dropdown list</h1>  
 <hr />  
@@ -11,7 +42,7 @@
 *@
 
 
-<div class="row">
+@*<div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -28,25 +59,16 @@
             </div>
         </form>
     </div>
-</div>
+</div>*@
 
 @*<div>
     <a asp-action="Index">Back to List</a>
 </div>*@
 
-@section Scripts {
+@*@section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+}*@
 
-               <div class="p-4">
-	<h5>Left Alignment</h5>
-	<div class="card mb-0 bg-light mt-3">
-	    <div class="card-body">
-	        <h4 class="card-title">Special title treatment</h4>
-	        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-	        <a href="javascript:void(0)" class="btn btn-info">Go somewhere</a>
-	    </div>
-	</div>
-	</div>
+          
 	
 	
