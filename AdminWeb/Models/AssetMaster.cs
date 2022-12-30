@@ -10,5 +10,6 @@
         public string PSContactNumber { get; set; }
         public string SHO_Name { get; set; }
         public string SHO_Contact { get; set; }
+        public int LocationId { get; set; }
     }
 }

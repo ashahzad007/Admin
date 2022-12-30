@@ -15,5 +15,6 @@ namespace AdminWeb.Data
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
         public virtual DbSet<Person> Person { get; set; }
         public virtual DbSet<Location> Location { get; set; }
+        public DbSet<AdminWeb.Models.AssetMaster> AssetMaster { get; set; }
     }
 }

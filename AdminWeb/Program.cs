@@ -17,6 +17,7 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddRazorPages();
 builder.Services.AddScoped<IGenericRepository<Person>, PersonRepository>();
 builder.Services.AddScoped<IGenericRepository<Location>, LocationRepository>();
+builder.Services.AddScoped<IGenericRepository<AssetMaster>, AssetMasterRepository>();
 //builder.Services.AddTransient<ICurrentUserService, CurrentUserService>();
 
 
@@ -56,13 +57,12 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapRazorPages();
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Location}/{action=GetLocationList}/{id?}");
 
 
 app.Run();

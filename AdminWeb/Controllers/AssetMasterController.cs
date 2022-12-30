@@ -26,24 +26,28 @@ namespace AdminWeb.Controllers
             return View();
         }
 
+        // Main Tabs achieved with Expendo Object
         public ActionResult MainTab()
         {
             //PopulateTaxNatureList();
             //PopulateDocumentList();
             //ViewData["list"] = FillStatus();
             dynamic mymodel = new ExpandoObject();
+            mymodel.Location = new Location();
+            mymodel.MethodType = "Create";
+            mymodel.Person = new Person();
+            mymodel.MethodType = "Create";
             mymodel.Asset = new AssetMaster
             {
                 //CreatedBy = User.Identity.Name,
                 //CreatedDate = DateTime.Now
 
             };
-            mymodel.Person = new Person();
-            mymodel.MethodType = "Create";
+           
             //mymodel.Taxlist = ViewBag.TaxNature;
             //mymodel.Statuslist = ViewData["list"];
             //mymodel.documentstypes = ViewBag.DoctypeID;
-            return PartialView("~/Views/Case/_Courtmaintab.cshtml", mymodel);
+            return PartialView("~/Views/Shared/MainTab.cshtml", mymodel);
         }
 
 
