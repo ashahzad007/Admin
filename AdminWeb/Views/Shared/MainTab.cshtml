@@ -1,10 +1,13 @@
 ﻿@model dynamic
 @{
 
-    //var Location = Model.Location as AdminWeb.Models.Location;
+    var Location = Model.Location as AdminWeb.Models.Location;
     var Asset = Model.Asset as AdminWeb.Models.AssetMaster;
     var Person = Model.Person as AdminWeb.Models.Person;
-    //Location.Id = ViewBag.LocationId;
+    Person.LocationId = ViewBag.LocationIdX;
+    Asset.LocationId = ViewBag.LocationIdX;
+
+    
 
     //string msg = Model.MethodType;
     //ViewData["Taxlist"] = Model.Taxlist;
@@ -14,7 +17,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
     
 }
-
+<h1>LOCATION ID @ViewBag.LocationIdX</h1>
 <ul class="nav nav-tabs mb-3">
     <li class="nav-item">
         <a href="#home" data-toggle="tab" aria-expanded="false" class="nav-link active">

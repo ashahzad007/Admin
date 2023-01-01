@@ -33,7 +33,10 @@
             </td>
             <td>
                  @*<select asp-for="@item.Id" asp-items="@(new SelectList(ViewBag.message,"Id","LocationName"))"></select> *@
-                <a asp-action="MainTab" asp-route-id="@item.Id" asp-controller="AssetMaster">Edit</a> |
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                @*  @Html.ActionLink("Edit", "MainTab", new { id = item.Id, msg = "Edit" }, htmlAttributes: new { @class = "btn btn-primary btn-sm" })
+  @Url.ActionContext.RouteData.Values["id"]*@
+
                 <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
                 <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
             </td>

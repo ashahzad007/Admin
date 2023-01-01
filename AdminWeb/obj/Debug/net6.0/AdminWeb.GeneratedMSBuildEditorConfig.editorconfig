@@ -227,6 +227,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9jYXRpb25cR2V0TG9jYXRpb25MaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/amir.shahzad/source/repos/Admin/AdminWeb/Views/Location/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9jYXRpb25cUHJpdmFjeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/amir.shahzad/source/repos/Admin/AdminWeb/Views/Location/SaveLocation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9jYXRpb25cU2F2ZUxvY2F0aW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

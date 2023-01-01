@@ -27,17 +27,20 @@ namespace AdminWeb.Controllers
         }
 
         // Main Tabs achieved with Expendo Object
-        public ActionResult MainTab()
+        public ActionResult MainTab(int Id)
         {
             //PopulateTaxNatureList();
             //PopulateDocumentList();
-            //ViewData["list"] = FillStatus();
+            //ViewData["list"] = FillStatus();;
             dynamic mymodel = new ExpandoObject();
             mymodel.Location = new Location();
             mymodel.MethodType = "Create";
             mymodel.Person = new Person();
             mymodel.MethodType = "Create";
+            mymodel.LocId = Id;
+            ViewBag.LocationIdX = Id;
             mymodel.Asset = new AssetMaster
+           
             {
                 //CreatedBy = User.Identity.Name,
                 //CreatedDate = DateTime.Now

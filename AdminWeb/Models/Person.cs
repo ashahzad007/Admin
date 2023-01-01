@@ -8,6 +8,6 @@ namespace AdminWeb.Models
         public string Name { get; set; }
         public string Address { get; set; }
         public string HomeTown { get; set; }
-        public string LocationId { get; set; }
+        public int LocationId { get; set; }
     }
 }

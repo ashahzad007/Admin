@@ -66,6 +66,7 @@ namespace AdminWeb.Controllers
 
         public IActionResult Privacy()
         {
+            ViewBag.Value = "HELLO";
             return View();
         }
 
@@ -73,7 +74,11 @@ namespace AdminWeb.Controllers
         public IActionResult Edit(int id)
         {
             var row = _locationRepository.GetList().Result.Find(x => x.Id == id);
-            return View(row);
+            ViewBag.LocationId = id;
+            ViewBag.LocationId1 = row.Id;
+            return RedirectToAction("MainTab", "AssetMaster", new { area = "" , Id= id });
+            
+
         }
 
 
@@ -81,6 +86,7 @@ namespace AdminWeb.Controllers
         public async Task<IActionResult> Edit(int? id, Location model)
         {
             bool _result = await _locationRepository.Edit(model);
+            ViewBag.LocationId = id;
             ModelState.Clear(); //CLEAR FORM DATA
             return RedirectToAction("Index");
         }
