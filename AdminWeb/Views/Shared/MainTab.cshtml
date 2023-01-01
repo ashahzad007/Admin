@@ -1,9 +1,14 @@
 ﻿@model dynamic
 @{
+    // important steps, data retrun from controoler to controller not partial view if you use your mode , Ids cannot be passed as view sometime
+    // // return redirect to action with ID 
+    // return partail views are important to achieve.
 
     var Location = Model.Location as AdminWeb.Models.Location;
     var Asset = Model.Asset as AdminWeb.Models.AssetMaster;
     var Person = Model.Person as AdminWeb.Models.Person;
+    // View Bag data from Location Controller 
+    // step 1 , loction Id, step 2 , Location Id to Asset controller 
     Person.LocationId = ViewBag.LocationIdX;
     Asset.LocationId = ViewBag.LocationIdX;
 

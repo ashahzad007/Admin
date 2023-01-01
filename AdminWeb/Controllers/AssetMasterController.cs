@@ -27,6 +27,7 @@ namespace AdminWeb.Controllers
         }
 
         // Main Tabs achieved with Expendo Object
+        // Catch Lication Id here
         public ActionResult MainTab(int Id)
         {
             //PopulateTaxNatureList();
@@ -38,6 +39,7 @@ namespace AdminWeb.Controllers
             mymodel.Person = new Person();
             mymodel.MethodType = "Create";
             mymodel.LocId = Id;
+            // Location Id Catch from Location Controller.
             ViewBag.LocationIdX = Id;
             mymodel.Asset = new AssetMaster
            
@@ -50,6 +52,7 @@ namespace AdminWeb.Controllers
             //mymodel.Taxlist = ViewBag.TaxNature;
             //mymodel.Statuslist = ViewData["list"];
             //mymodel.documentstypes = ViewBag.DoctypeID;
+            // return partial view with Model, mymodel
             return PartialView("~/Views/Shared/MainTab.cshtml", mymodel);
         }
 

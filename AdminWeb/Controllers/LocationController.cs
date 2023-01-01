@@ -76,6 +76,7 @@ namespace AdminWeb.Controllers
             var row = _locationRepository.GetList().Result.Find(x => x.Id == id);
             ViewBag.LocationId = id;
             ViewBag.LocationId1 = row.Id;
+            // very Important step to route another controller with Id
             return RedirectToAction("MainTab", "AssetMaster", new { area = "" , Id= id });
             
 
