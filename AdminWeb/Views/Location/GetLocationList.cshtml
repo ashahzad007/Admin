@@ -8,7 +8,7 @@
 @*<h1>GetLocationList</h1>*@
 
 <p>
-    <a asp-action="SaveLocation" asp-controller="Location">Create New</a>
+    <a asp-action="SaveLocation" asp-controller="Location" data-toggle="modal" data-target="#myModal" type="button" class="btn btn-primary">Create New</a>
 </p>
 <div class="table-responsive">
 <table id="zero_config" class="table table-striped table-bordered no-wrap">
@@ -20,7 +20,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.Description)
             </th>
-            <th></th>
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>
@@ -34,18 +34,57 @@
             </td>
             <td>
                  @*<select asp-for="@item.Id" asp-items="@(new SelectList(ViewBag.message,"Id","LocationName"))"></select> *@
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+               @* <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |*@
                 @*  @Html.ActionLink("Edit", "MainTab", new { id = item.Id, msg = "Edit" }, htmlAttributes: new { @class = "btn btn-primary btn-sm" })
   @Url.ActionContext.RouteData.Values["id"]*@
+     
 
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-trash"></i>Edit</button>
+                <a asp-action="Details" type="button" class="btn btn-primary" asp-route-id="@item.Id">Details</a> 
+                <a asp-action="Delete" type="button" class="btn btn-primary" asp-route-id="@item.Id">Delete</a> 
+                  
+
             </td>
         </tr>
 }
     </tbody>
 </table>
 </div>
+
+<div id="myModal" class="modal fade" tabindex="-1" role="dialog"
+aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Modal Heading</h4>
+                <button type="button" class="close" data-dismiss="modal"
+                    aria-hidden="true">×</button>
+            </div>
+            <div class="modal-body">
+                <h6>Text in a modal</h6>
+                <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
+                <hr>
+                <h6>Overflowing text to show scroll behavior</h6>
+                <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
+                    dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta
+                    ac consectetur ac, vestibulum at eros.</p>
+                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+                    Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
+                    auctor.</p>
+                <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo
+                    cursus magna, vel scelerisque nisl consectetur et. Donec sed odio
+                    dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light"
+                    data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+			
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 
