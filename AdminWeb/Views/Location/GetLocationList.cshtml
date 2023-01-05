@@ -8,7 +8,7 @@
 @*<h1>GetLocationList</h1>*@
 
 <p>
-    <a asp-action="SaveLocation" asp-controller="Location" data-toggle="modal" data-target="#myModal" type="button" class="btn btn-primary">Create New</a>
+    <a asp-action="SaveLocation" asp-controller="Location" data-toggle="modal" data-target="#myModal" type="button" class="btn btn-primary">Add New</a>
 </p>
 <div class="table-responsive">
 <table id="zero_config" class="table table-striped table-bordered no-wrap">
@@ -61,24 +61,14 @@ aria-labelledby="myModalLabel" aria-hidden="true">
                     aria-hidden="true">×</button>
             </div>
             <div class="modal-body">
-                <h6>Text in a modal</h6>
-                <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
-                <hr>
-                <h6>Overflowing text to show scroll behavior</h6>
-                <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-                    dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta
-                    ac consectetur ac, vestibulum at eros.</p>
-                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
-                    Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
-                    auctor.</p>
-                <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo
-                    cursus magna, vel scelerisque nisl consectetur et. Donec sed odio
-                    dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+                <div>LocationName:<input type="text" maxlength="8" id="locname" width="150" /></div>
+                <div>Description:<input type="text" maxlength="8" id="desc" width="150" /></div>
+
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-light"
                     data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" id="btnsbmt" class="btn btn-primary">Save changes</button>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
@@ -90,7 +80,54 @@ aria-labelledby="myModalLabel" aria-hidden="true">
 
 <script language="javascript" type="text/javascript">
  $(document).ready(function() {
+     //debugger
          console.log("Working Jquery!");
-        $('#zero_config').DataTable();
+     $('#zero_config').DataTable({
+         pageLength : 5,
+          lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 'All']]
+     });
+    
+    
+   
+
     });
+    
+    $("#btnsbmt").click(function () {
+        debugger
+                AddBidd();
+
+
+        });
+function AddBidd() {
+    debugger
+    var modelX = {
+        LocationName: $('#locname').val(),
+        Description: $('#desc').val(),
+
+
+    };
+     $.ajax({
+                        
+            url: "/Location/Add",
+            data: JSON.stringify(modelX),
+            type: "POST",
+            
+            contentType: "application/json;charset=utf-8",
+            dataType: "json",
+            success: function (result) {
+                    $('#myModal').modal('hide');
+                   
+
+
+            },
+            error: function (errormessage) {
+                alert(errormessage.responseText);
+            }
+        });
+}
+
+
 </script>
+
+
+

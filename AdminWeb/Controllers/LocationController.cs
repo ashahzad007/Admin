@@ -62,9 +62,18 @@ namespace AdminWeb.Controllers
         }
 
 
+        [HttpPost]
+        public JsonResult Add(Location modelX)
+        {
+            var result = _locationRepository.Save(modelX);
+            ModelState.Clear();
+            string status = "";
+            status = "Saved";
+            return Json(status);
 
+        }
 
-        public IActionResult Privacy()
+            public IActionResult Privacy()
         {
             ViewBag.Value = "HELLO";
             return View();
