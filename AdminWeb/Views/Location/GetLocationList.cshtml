@@ -106,20 +106,18 @@ function AddBidd() {
 
 
     };
+    var Url = "@Url.Action("Add","Location")";
      $.ajax({
-                        
-            url: "/Location/Add",
+           type: "POST",         
+            url: Url,
             data: JSON.stringify(modelX),
-            type: "POST",
-            
             contentType: "application/json;charset=utf-8",
             dataType: "json",
             success: function (result) {
                     $('#myModal').modal('hide');
-                   
-
-
+           
             },
+            
             error: function (errormessage) {
                 alert(errormessage.responseText);
             }

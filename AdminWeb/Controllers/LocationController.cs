@@ -63,7 +63,7 @@ namespace AdminWeb.Controllers
 
 
         [HttpPost]
-        public JsonResult Add(Location modelX)
+        public JsonResult Add([FromBody] Location modelX) // [FromBody] is very Important to receive Data
         {
             var result = _locationRepository.Save(modelX);
             ModelState.Clear();
